@@ -1,16 +1,15 @@
 ---
-date: '2020-02-15'
+date: '2024-23-12'
 title: 'Basic Chatbot'
-github: 'https://github.com/yashitanamdeo/Basic-Chatbot'
+github: 'https://github.com/Pranesh-2005/SimpleChatBot'
 external: ''
 tech:
   - Python
-  - Numpy
-  - Keras
-  - NLTK
-  - Pickle
-company: ''
+  - Flask
+  - Docker
+
+company: 'BIT'
 showInProjects: true
 ---
 
-Built a simple chatbot using deep learning techniques. The chatbot is trained on the dataset which contains categories (intents), pattern and responses.
+Built a simple chatbot made to understand the workflow of DockerFile and Docker Image

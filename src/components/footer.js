@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import { FormattedIcon } from '@components/icons';
 import { socialMedia } from '@config';
 import styled from 'styled-components';
@@ -14,6 +13,7 @@ const StyledContainer = styled.footer`
   height: auto;
   min-height: 70px;
 `;
+
 const StyledSocial = styled.div`
   color: ${colors.lightSlate};
   width: 100%;
@@ -22,12 +22,14 @@ const StyledSocial = styled.div`
   display: none;
   ${media.tablet`display: block;`};
 `;
+
 const StyledSocialList = styled.ul`
   ${mixins.flexBetween};
   padding: 0;
   margin: 0;
   list-style: none;
 `;
+
 const StyledSocialLink = styled.a`
   padding: 10px;
   svg {
@@ -35,18 +37,20 @@ const StyledSocialLink = styled.a`
     height: 20px;
   }
 `;
+
 const StyledMetadata = styled.div`
   font-family: ${fonts.SFMono};
   font-size: ${fontSizes.xs};
   line-height: 1;
 `;
+
 const StyledGitHubLink = styled.a`
   color: ${colors.lightSlate};
   padding: 10px;
 `;
+
 const StyledGitHubInfo = styled.div`
   margin-top: 10px;
-
   & > span {
     display: inline-flex;
     align-items: center;
@@ -61,25 +65,18 @@ const StyledGitHubInfo = styled.div`
 `;
 
 const Footer = () => {
-  const [githubInfo, setGitHubInfo] = useState({
-    stars: null,
-    forks: null,
-  });
+  const [githubInfo, setGitHubInfo] = useState(null);
 
   useEffect(() => {
-    if (process.env.NODE_ENV !== 'production') {
-      return;
-    }
-    fetch('https://api.github.com/repos/bchiang7/v4')
-      .then(response => response.json())
-      .then(json => {
-        const { stargazers_count, forks_count } = json;
+    fetch('https://api.github.com/users/pranesh-2005')
+      .then(res => res.json())
+      .then(data => {
         setGitHubInfo({
-          stars: stargazers_count,
-          forks: forks_count,
+          public_repos: data.public_repos || 0,
+          followers: data.followers || 0,
         });
       })
-      .catch(e => console.error(e));
+      .catch(err => console.error('GitHub API error:', err));
   }, []);
 
   return (
@@ -100,36 +97,34 @@ const Footer = () => {
             ))}
         </StyledSocialList>
       </StyledSocial>
-      <StyledMetadata tabindex="-1">
+      <StyledMetadata tabIndex="-1">
         <StyledGitHubLink
-          href="https://github.com/bchiang7/v4"
+          href="https://github.com/pranesh-2005"
           target="_blank"
           rel="nofollow noopener noreferrer">
           <div>
-            Designed &amp; Built by Brittany Chiang<br></br>
-            Revised by Yashita Namdeo
+            Designed &amp; Built by Brittany Chiang
+            <br />
+            Revised by Pranesh
           </div>
 
-          {githubInfo.stars && githubInfo.forks && (
-            <StyledGitHubInfo>
-              <span>
-                <FormattedIcon name="Star" />
-                <span>{githubInfo.stars.toLocaleString()}</span>
-              </span>
-              <span>
-                <FormattedIcon name="Fork" />
-                <span>{githubInfo.forks.toLocaleString()}</span>
-              </span>
-            </StyledGitHubInfo>
-          )}
+          {githubInfo && (
+  <StyledGitHubInfo>
+    <span>
+      <FormattedIcon name="Book" />
+      <span>{githubInfo?.public_repos?.toLocaleString?.() ?? '...'} Repos</span>
+    </span>
+    <span>
+      <FormattedIcon name="Users" />
+      <span>{githubInfo?.followers?.toLocaleString?.() ?? '...'} Followers</span>
+    </span>
+  </StyledGitHubInfo>
+)}
+
         </StyledGitHubLink>
       </StyledMetadata>
     </StyledContainer>
   );
-};
-
-Footer.propTypes = {
-  githubInfo: PropTypes.object,
 };
 
 export default Footer;

@@ -1,15 +1,15 @@
 ---
 date: '4'
-title: 'AI Face Landmark Detection'
-cover: 'face-landmark.png'
-github: 'https://github.com/yashitanamdeo/face-landmark-detection'
-external: 'https://yashitanamdeo.github.io/face-landmark-detection/'
+title: 'AI Generated Video Detector'
+cover: 'aigenviddetc.png'
+github: 'https://github.com/Pranesh-2005/AI-Generated-Video-Detector'
+external: 'https://github.com/Pranesh-2005/AI-Generated-Video-Detector'
 tech:
-  - TensorFlow.JS
-  - React
+  - Python
+  - MTCNN
+  - EffecientNet V2
+  - Gradio
 showInProjects: true
 ---
 
-Facial landmark recognition allows you to detect a number of different points on your face that together make up your eyes, mouth, ears, nose and so on.
-
-Inspired by Nicholas Renotte's [Youtube Tutorial](https://www.youtube.com/watch?v=7lXYGDVHUNw).
+AI Generated Video Detector allows you to detect a AI generated videos and prevets you from scammers and safe gaurds you also allows you to report wrong predictions and improves based on that.

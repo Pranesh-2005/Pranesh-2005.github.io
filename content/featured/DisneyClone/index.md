@@ -1,17 +1,15 @@
 ---
 date: '2'
-title: 'Disney+ Clone'
-cover: './disneyclone.png'
-github: 'https://github.com/yashitanamdeo/Disney-plus-Clone'
-external: 'https://disney-clone-83e44.web.app/'
+title: 'Assesment Platform'
+cover: './assesplat.png'
+github: 'https://github.com/Pranesh-2005/Assesment_Platform'
+external: 'https://assesment-platform.onrender.com'
 tech:
-  - ReactJS
-  - Redux
-  - Styled Components
-  - Firebase
+  - Python(Flask)
+  - HTML
+  - CSS
+  - Postgres
 showInProjects: true
 ---
 
-Built Disney+ Clone with React JS with Google account's Sign in feature. Styled to get 15+ movies made by Disney; clickable images to get details of the specific movie.
-
-Inspired by Clever Programmer's [Youtube Channel](https://www.youtube.com/channel/UCqrILQNl5Ed9Dz6CGMyvMTQ).
+Built Assesment Platform where students can login and view their dashboards, results, updates and can take assesments. Where as Teachers can create Multiple tests, change-update-delete questions, add and delete students also can send updates to students or a particular one.   

@@ -5,12 +5,13 @@
   "author": "Yashita Namdeo <yashita.namdeo2000@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yashitanamdeo/yashitanamdeo.github.io"
+    "url": "https://github.com/Pranesh-2005/Pranesh-2005.github.io"
   },
   "keywords": [
     "gatsby"
   ],
   "license": "MIT",
+  "homepage": "https://Pranesh-2005.github.io",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",

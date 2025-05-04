@@ -3,20 +3,17 @@ title: 'About Me'
 avatar: 'me.jpg'
 skills:
   - Coding
-  - Reading
-  - Painting
-  - Crafting
+  - Reading Posts and Blogs of Tech
+  - Playing Football
+  - Exploring Ideas
   - Problem Solving
   - Team Management
-  - Mentoring
+  - Guiding
 ---
 
-Hello! I'm Yashita Namdeo, from Indore, also known as Mini Mumbai and the Cleanest City of India.
+Hello! I'm Pranesh, from Punjai Puliampatti.
 
-I am a creative, time punctual, dedicated, goal-oriented individual with decent moral Values and Ethicates along with a high-energy level, honed communication skills, strong organizational skills, and meticulous attention to detail.
+I am a creative, time punctual, dedicated, goal-oriented individual with decent moral Values and Ethicates along with a high-energy level, good communication skills, strong organizational skills, and meticulous attention to detail.
 
-I am pursuing my Bachelors from [SVVV, Indore](https://www.svvv.edu.in/) in Computer Science and Engineering (2018-2022) my current GPA is [3.7]() out of 4.
+I am currently pursuing my Bachelors at [Bannari Amman Institute of Technolgy, Sathyamangalam](https://www.svvv.edu.in/) in Artificial Intelligence and Machine Learning (2022-Present) my current CGPA is [7.73]() out of 10 upto 5'th Semester.
 
-I am a member of [Developer Student Club - SVVV](https://dsc.community.dev/shri-vaishnav-vidyapeeth-vishwavidyalaya/) and have also been awarded 75% Merit Scholarship(Top 10%) by my college.
-
-Here are a few of the other activities that I love to do!

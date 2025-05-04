@@ -1,12 +1,16 @@
 ---
-date: '2020-09-21'
-title: 'Member'
-company: 'DSV - SVVV'
-location: remote
-range: 'Sep 2020 - Present'
-url: 'https://dsc.community.dev/shri-vaishnav-vidyapeeth-vishwavidyalaya/'
+# date: '2021-05-19'
+# title: 'Framework & Libraries'
+company: 'Framework & Libraries'
+# location: remote
+# range: 'May 2021 - June 2021'
+# url: 'https://internship.suvenconsultants.com/'
 ---
-
-- Grown knowledge in a peer-to-peer learning environment.
-- Build solutions for local businesses and the community.
-- Attained several technical workshops.
+- Flask
+- NumPy
+- Pandas
+- HuggingFace
+- Tensorflow
+- PyTorch
+- Scikitlearn
+- Gradio

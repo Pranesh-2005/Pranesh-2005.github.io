@@ -1,13 +1,14 @@
 ---
-date: '2021-05-31'
-title: 'CSS Animation WebApp'
-github: 'https://github.com/yashitanamdeo/CSS-Animation-WebApp'
-external: 'https://yashitanamdeo.github.io/CSS-Animation-WebApp/'
+date: '2025-04-30'
+title: 'Personl Portfolio'
+github: 'https://github.com/Pranesh-2005/Portfolio'
+external: 'https://Pranesh-2005.github.io/Portfolio'
 tech:
   - HTML
   - CSS
-company: 'Suven'
+  - JS
+company: 'BIT'
 showInProjects: true
 ---
 
-Project 3 under HTML-CSS Suven Coding Internship
+My Personal Portfolio Page

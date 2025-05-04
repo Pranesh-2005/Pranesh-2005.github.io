@@ -69,11 +69,7 @@ export const pageQuery = graphql`
       edges {
         node {
           frontmatter {
-            title
             company
-            location
-            range
-            url
           }
           html
         }

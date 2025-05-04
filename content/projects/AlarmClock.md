@@ -1,13 +1,13 @@
 ---
-date: '2020-02-12'
-title: 'Alarm Clock'
-github: 'https://github.com/yashitanamdeo/AlarmClock'
-external: ''
+date: '2024-10-09'
+title: 'Emotion Detection in Text'
+github: 'https://github.com/Pranesh-2005/MobilePwa'
+external: 'https://mobilepwa.onrender.com/'
 tech:
   - Python
   - Tkinter
-company: ''
+company: 'BIT'
 showInProjects: true
 ---
 
-This alarm clock is a simple clock with a function that can be activated to ring at a time set in advance.
+Emotion Detection in text using Bert Model which can detect emotions in different Languages.

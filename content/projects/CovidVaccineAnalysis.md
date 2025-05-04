@@ -1,16 +1,15 @@
 ---
-date: '2021-05-15'
-title: 'Covid-19 Vaccine Analysis'
-github: 'https://github.com/yashitanamdeo/Covid19_Vaccine_Analysis'
-external: 'https://github.com/yashitanamdeo/Covid19_Vaccine_Analysis/blob/main/Covid19_Vaccine_Analysis.ipynb'
+date: '2025-03-03'
+title: 'NL2SQL'
+github: 'https://github.com/Pranesh-2005/Natural2Sql2Natural'
+external: ''
 tech:
   - Python
-  - Numpy
-  - Pandas
-  - Matplotlib
-  - Seaborn
+  - NLP
+  - NLTK
+  - Transformers
 company: ''
 showInProjects: true
 ---
 
-Analyzed how many vaccines each country is using to fight covid-19.
+Developed an Interface to provide input text and coverted it into sql and fetched the result and convert the sql result into natural language.

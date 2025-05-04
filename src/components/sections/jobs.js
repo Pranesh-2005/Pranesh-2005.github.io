@@ -195,7 +195,7 @@ const Jobs = ({ data }) => {
 
   return (
     <StyledContainer id="jobs" ref={revealContainer}>
-      <Heading>Where I&apos;ve Worked</Heading>
+      <Heading>Languages and Tools I&apos;am Good At</Heading>
       <StyledTabs>
         <StyledTabList role="tablist" aria-label="Job tabs" onKeyDown={e => onKeyPressed(e)}>
           {data &&
@@ -223,7 +223,7 @@ const Jobs = ({ data }) => {
         {data &&
           data.map(({ node }, i) => {
             const { frontmatter, html } = node;
-            const { title, url, company, range } = frontmatter;
+            const { title, company, range } = frontmatter;
             return (
               <StyledTabContent
                 key={i}
@@ -235,16 +235,16 @@ const Jobs = ({ data }) => {
                 hidden={activeTabId !== i}>
                 <StyledJobTitle>
                   <span>{title}</span>
-                  <StyledCompany>
+                  {/* <StyledCompany>
                     <span>&nbsp;@&nbsp;</span>
                     <a href={url} target="_blank" rel="nofollow noopener noreferrer">
                       {company}
                     </a>
-                  </StyledCompany>
+                  </StyledCompany> */}
                 </StyledJobTitle>
-                <StyledJobDetails>
+                {/* <StyledJobDetails>
                   <span>{range}</span>
-                </StyledJobDetails>
+                </StyledJobDetails> */}
                 <div dangerouslySetInnerHTML={{ __html: html }} />
               </StyledTabContent>
             );
