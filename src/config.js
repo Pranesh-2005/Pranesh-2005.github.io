@@ -4,7 +4,7 @@ module.exports = {
     'Pranesh is an incoming Software Developer, based in India, who loves learning new things and helping tech beginners.',
   siteKeywords:
     'Pranesh, pranesh, pranesh-2005, praneshs, software engineer, web developer, javascript, python, java, bit, erode',
-  siteUrl: 'https://pranesh-2005.github.io/',
+  siteUrl: 'https://Pranesh-2005.github.io/',
   siteLanguage: 'en_US',
   googleAnalyticsID: 'UA-45666519-2',
   googleVerification: 'DCl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk',
@@ -43,11 +43,15 @@ module.exports = {
     },
     {
       name: 'Skills',
-      url: '/#jobs',
+      url: '/#skills',
     },
     {
       name: 'Projects',
       url: '/#projects',
+    },
+        {
+      name: 'Certificates',
+      url: '/#certificates',
     },
     {
       name: 'Contact',

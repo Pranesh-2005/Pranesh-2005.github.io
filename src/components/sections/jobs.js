@@ -154,7 +154,7 @@ const StyledJobDetails = styled.h5`
   }
 `;
 
-const Jobs = ({ data }) => {
+const Skills = ({ data }) => {
   const [activeTabId, setActiveTabId] = useState(0);
   const [tabFocus, setTabFocus] = useState(null);
   const tabs = useRef([]);
@@ -194,10 +194,10 @@ const Jobs = ({ data }) => {
   };
 
   return (
-    <StyledContainer id="jobs" ref={revealContainer}>
+    <StyledContainer id="skills" ref={revealContainer}>
       <Heading>Languages and Tools I&apos;am Good At</Heading>
       <StyledTabs>
-        <StyledTabList role="tablist" aria-label="Job tabs" onKeyDown={e => onKeyPressed(e)}>
+        <StyledTabList role="tablist" aria-label="Skill tabs" onKeyDown={e => onKeyPressed(e)}>
           {data &&
             data.map(({ node }, i) => {
               const { company } = node.frontmatter;
@@ -223,7 +223,7 @@ const Jobs = ({ data }) => {
         {data &&
           data.map(({ node }, i) => {
             const { frontmatter, html } = node;
-            const { title, company, range } = frontmatter;
+            const { title, url, company, range } = frontmatter;
             return (
               <StyledTabContent
                 key={i}
@@ -254,8 +254,8 @@ const Jobs = ({ data }) => {
   );
 };
 
-Jobs.propTypes = {
+Skills.propTypes = {
   data: PropTypes.array.isRequired,
 };
 
-export default Jobs;
+export default Skills;

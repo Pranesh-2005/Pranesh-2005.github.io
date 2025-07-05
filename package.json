@@ -2,13 +2,14 @@
   "name": "v1",
   "description": "Personal Website V1",
   "version": "1.0.0",
-  "author": "Yashita Namdeo <yashita.namdeo2000@gmail.com>",
+  "author": "Pranesh <praneshmadhan646@gmail.com>",
   "repository": {
     "type": "git",
     "url": "https://github.com/Pranesh-2005/Pranesh-2005.github.io"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "Pranesh","personal","praneshmadhan646","Pranesh Portfolio","Pranesh BIT","Pranesh AIML","Pranesh js","pranesh portfolio"
   ],
   "license": "MIT",
   "homepage": "https://Pranesh-2005.github.io",

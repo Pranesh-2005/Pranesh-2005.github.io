@@ -5,7 +5,7 @@ github: 'https://github.com/Pranesh-2005/MobilePwa'
 external: 'https://mobilepwa.onrender.com/'
 tech:
   - Python
-  - Tkinter
+  - Bert(RoBerta)
 company: 'BIT'
 showInProjects: true
 ---

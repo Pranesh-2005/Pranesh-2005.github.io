@@ -5,7 +5,7 @@ module.exports = {
     title: config.siteTitle,
     siteUrl: config.siteUrl,
     description: config.siteDescription,
-    image: '/images/og.png',
+    image: '/images/logo.png',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -17,8 +17,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'Yashita Namdeo',
-        short_name: 'Yashita Namdeo',
+        name: 'Pranesh Portfolio',
+        short_name: 'Pranesh Portfolio',
         start_url: '/',
         background_color: config.colors.darkNavy,
         theme_color: config.colors.navy,
@@ -46,6 +46,13 @@ module.exports = {
       options: {
         path: `${__dirname}/content/projects`,
         name: `projects`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/certificates`,
+        name: `certificates`,
       },
     },
     {
