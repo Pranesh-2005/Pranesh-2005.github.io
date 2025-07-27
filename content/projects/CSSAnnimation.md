@@ -1,14 +1,13 @@
 ---
-date: '2025-04-30'
-title: 'Personl Portfolio'
-github: 'https://github.com/Pranesh-2005/Portfolio'
-external: 'https://Pranesh-2005.github.io/Portfolio'
+date: '2024-07-14'
+title: 'Credentials And Password Manager'
+github: 'https://github.com/Pranesh-2005/Credentials_and_password_Manager'
+external: 'https://credandpwdv2.vercel.app/'
 tech:
-  - HTML
-  - CSS
-  - JS
-company: 'BIT'
+  - Next.JS
+  - Typescript
+company: ''
 showInProjects: true
 ---
 
-My Personal Portfolio Page
+Built a Progressive Web Application(PWA) to manage Passwords and credentials secure in a vault.dat file which will be hassed by SHA 256 Hashing.

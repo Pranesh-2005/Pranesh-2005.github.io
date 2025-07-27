@@ -1,15 +1,16 @@
 ---
 date: '2024-11-02'
-title: 'Any File Converter'
-github: 'https://github.com/Pranesh-2005/Any-File-Format-Converter'
-external: ''
+title: 'Java Cheat Sheet'
+github: 'https://github.com/Pranesh-2005/Java_Cheat_Sheet'
+external: 'https://javacheatsheet.vercel.app'
 tech:
-  - Python
-  - HTML
-  - CSS
+  - Vue Js
+  - TypeScript
   - Javascript
+  - CSS
+
 company: 'BIT'
 showInProjects: true
 ---
 
-This Project will Convert Any File Format To Selected File Format For Windows
+Built a awesome cheat sheet for Java programming. It covers everything that a beginner should know about Java. It is built from the idea of pythoncheatsheet.org thanks for them.
