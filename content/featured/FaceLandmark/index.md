@@ -1,9 +1,9 @@
 ---
 date: '4'
 title: 'AI Generated Video Detector'
-cover: 'aigenviddetc.png'
+cover: 'aifake.jpg'
 github: 'https://github.com/Pranesh-2005/AI-Generated-Video-Detector'
-external: 'https://github.com/Pranesh-2005/AI-Generated-Video-Detector'
+external: 'https://huggingface.co/spaces/PraneshJs/fakevideodetect'
 tech:
   - Python
   - MTCNN
