@@ -63,19 +63,21 @@ export const pageQuery = graphql`
         }
       }
     }
-    skills: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/jobs/" } }
-      sort: { fields: [frontmatter___date], order: DESC }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            company
+  skills: allMarkdownRemark(
+    filter: { fileAbsolutePath: { regex: "/jobs/" } }
+    sort: { fields: [frontmatter___date], order: DESC }
+  ) {
+    edges {
+      node {
+        frontmatter {
+          gif {
+            publicURL
           }
-          html
         }
+        html
       }
     }
+  }
     featured: allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/featured/" } }
       sort: { fields: [frontmatter___date], order: DESC }

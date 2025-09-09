@@ -122,8 +122,8 @@ const StyledTabContent = styled.div`
   width: 100%;
   height: auto;
   padding-top: 12px;
-  padding-left: 30px;
-  ${media.tablet`padding-left: 20px;`};
+  padding-left: 0; // Remove left padding to eliminate the line
+  ${media.tablet`padding-left: 0;`};
   ${media.thone`padding-left: 0;`};
 
   ul {
@@ -139,19 +139,11 @@ const StyledJobTitle = styled.h4`
   font-weight: 500;
   margin-bottom: 5px;
 `;
-const StyledCompany = styled.span`
-  color: ${colors.green};
-`;
-const StyledJobDetails = styled.h5`
-  font-family: ${fonts.SFMono};
-  font-size: ${fontSizes.smish};
-  font-weight: normal;
-  letter-spacing: 0.05em;
-  color: ${colors.lightSlate};
-  margin-bottom: 30px;
-  svg {
-    width: 15px;
-  }
+
+const StyledGif = styled.img`
+  display: block;
+  margin: 32px auto 0 auto; // Adds space above gif and centers it
+  max-width: 400px;
 `;
 
 const Skills = ({ data }) => {
@@ -166,41 +158,28 @@ const Skills = ({ data }) => {
     if (tabs.current[tabFocus]) {
       tabs.current[tabFocus].focus();
     } else {
-      // If we're at the end, go to the start
-      if (tabFocus >= tabs.current.length) {
-        setTabFocus(0);
-      }
-      // If we're at the start, move to the end
-      if (tabFocus < 0) {
-        setTabFocus(tabs.current.length - 1);
-      }
+      if (tabFocus >= tabs.current.length) setTabFocus(0);
+      if (tabFocus < 0) setTabFocus(tabs.current.length - 1);
     }
   };
 
-  // Only re-run the effect if tabFocus changes
   useEffect(() => focusTab(), [tabFocus]);
 
   const onKeyPressed = e => {
     if (e.keyCode === 38 || e.keyCode === 40) {
       e.preventDefault();
-      if (e.keyCode === 40) {
-        // Move down
-        setTabFocus(tabFocus + 1);
-      } else if (e.keyCode === 38) {
-        // Move up
-        setTabFocus(tabFocus - 1);
-      }
+      setTabFocus(tabFocus + (e.keyCode === 40 ? 1 : -1));
     }
   };
 
   return (
     <StyledContainer id="skills" ref={revealContainer}>
-      <Heading>Languages and Tools I&apos;am Good At</Heading>
+      <Heading>Languages and Tools I&apos;m Good At</Heading>
       <StyledTabs>
-        <StyledTabList role="tablist" aria-label="Skill tabs" onKeyDown={e => onKeyPressed(e)}>
+        <StyledTabList role="tablist" aria-label="Skill tabs" onKeyDown={onKeyPressed}>
           {data &&
             data.map(({ node }, i) => {
-              const { company } = node.frontmatter;
+              const { title } = node.frontmatter;
               return (
                 <li key={i}>
                   <StyledTabButton
@@ -209,10 +188,10 @@ const Skills = ({ data }) => {
                     ref={el => (tabs.current[i] = el)}
                     id={`tab-${i}`}
                     role="tab"
-                    aria-selected={activeTabId === i ? true : false}
+                    aria-selected={activeTabId === i}
                     aria-controls={`panel-${i}`}
                     tabIndex={activeTabId === i ? '0' : '-1'}>
-                    <span>{company}</span>
+                    <span>{title}</span>
                   </StyledTabButton>
                 </li>
               );
@@ -223,7 +202,7 @@ const Skills = ({ data }) => {
         {data &&
           data.map(({ node }, i) => {
             const { frontmatter, html } = node;
-            const { title, url, company, range } = frontmatter;
+            const { title, gif } = frontmatter;
             return (
               <StyledTabContent
                 key={i}
@@ -235,16 +214,13 @@ const Skills = ({ data }) => {
                 hidden={activeTabId !== i}>
                 <StyledJobTitle>
                   <span>{title}</span>
-                  {/* <StyledCompany>
-                    <span>&nbsp;@&nbsp;</span>
-                    <a href={url} target="_blank" rel="nofollow noopener noreferrer">
-                      {company}
-                    </a>
-                  </StyledCompany> */}
                 </StyledJobTitle>
-                {/* <StyledJobDetails>
-                  <span>{range}</span>
-                </StyledJobDetails> */}
+                {gif && gif.publicURL && (
+                  <StyledGif
+                    src={gif.publicURL}
+                    alt={`${title} gif`}
+                  />
+                )}
                 <div dangerouslySetInnerHTML={{ __html: html }} />
               </StyledTabContent>
             );
