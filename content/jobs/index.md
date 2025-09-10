@@ -1,4 +1,4 @@
 ---
 title: "Skills"
-gif: ./gif.gif
+gif: ./skills.mp4
 ---
