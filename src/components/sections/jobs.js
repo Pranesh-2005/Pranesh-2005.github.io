@@ -239,9 +239,9 @@ const Skills = ({ data }) => {
                 <div style={{ margin: '32px auto', maxWidth: 620 }}>
                   <IconCloud
                     images={slugs.map(getIconUrl)}
-                    size={620}
-                    iconSize={66}
-                    radius={240}
+                    size={700}
+                    iconSize={62}
+                    radius={280}
                     maxSpeed={0.050}
                   />
                 </div>

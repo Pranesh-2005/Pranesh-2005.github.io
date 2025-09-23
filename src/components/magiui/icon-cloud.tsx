@@ -113,7 +113,7 @@ export function IconCloud({
     setIconPositions(newIcons)
   }, [icons, images, radius])
 
-  // Animation (only auto-rotation)
+  // Animation (only auto-rotation, no scaling)
   useEffect(() => {
     const canvas = canvasRef.current
     const ctx = canvas?.getContext("2d")
@@ -138,12 +138,12 @@ export function IconCloud({
         const rotatedZ = icon.x * sinY + icon.z * cosY
         const rotatedY = icon.y * cosX + rotatedZ * sinX
 
-        const scale = (rotatedZ + radius * 2) / (radius * 3)
-        const opacity = Math.max(0.2, Math.min(1, (rotatedZ + radius * 1.5) / (radius * 2)))
-
+        // No scaling, always 1
         ctx.save()
         ctx.translate(canvas.width / 2 + rotatedX, canvas.height / 2 + rotatedY)
-        ctx.scale(scale, scale)
+        ctx.scale(1, 1)
+        // You can keep the opacity effect or set to 1 if you want fixed opacity
+        const opacity = Math.max(0.2, Math.min(1, (rotatedZ + radius * 1.5) / (radius * 2)))
         ctx.globalAlpha = opacity
 
         if (icons || images) {
