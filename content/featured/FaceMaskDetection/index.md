@@ -1,6 +1,6 @@
 ---
 date: '3'
-title: 'Project Q&A'
+title: 'v0.dev clone'
 cover: 'myv0.jpg'
 github: 'https://github.com/Pranesh-2005/V0-like-website'
 external: 'https://praneshjs-free-static-website-generator.hf.space/'
