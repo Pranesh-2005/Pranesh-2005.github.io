@@ -4,7 +4,34 @@ import sr from '@utils/sr';
 import { srConfig } from '@config';
 import styled from 'styled-components';
 import { theme, mixins, media, Section, Heading } from '@styles';
+import { IconCloud } from '../magiui/icon-cloud';
+
 const { colors, fontSizes, fonts } = theme;
+
+const slugs = [
+  "anaconda", "apachehadoop", "azure", "gnubash", "c", "claude", "clion", "cockroachlabs", "css", "docker",
+  "eclipseide", "fastapi", "flask", "git", "github", "gitlab", "gitlfs", "go", "googlecolab", "gradio",
+  "graphql", "gunicorn", "html5", "huggingface", "intellij", "javascript", "jupyter", "json", "kaggle",
+  "keras", "langchain", "linux", "matplotlib", "modelcontextprotocol", "mysql", "netlify", "npm", "numpy",
+  "n8n", "ollama", "onnx", "openai", "opencv", "pandas", "pnpm", "postgresql", "pycharm", "pypi", "python",
+  "pythonanywhere", "pytorch", "railway", "redis", "render", "scikitlearn", "selenium", "streamlit",
+  "tensorflow", "ubuntu", "uv", "vercel", "vscode", "virtualbox", "v0", "windows11", "yaml",
+];
+
+const deviconAvailable = new Set([
+  "anaconda", "apachehadoop", "azure", "bash", "c", "clion", "css3", "docker", "eclipse", "fastapi", "flask",
+  "git", "github", "gitlab", "go", "graphql", "html5", "intellij", "javascript", "jupyter", "kaggle", "keras",
+  "linux", "matplotlib", "mysql", "netlify", "npm", "numpy", "opencv", "pandas", "postgresql", "pycharm",
+  "python", "pytorch", "redis", "scikitlearn", "selenium", "tensorflow", "ubuntu", "vercel", "vscode",
+  "windows11", "yaml",
+]);
+
+function getIconUrl(slug) {
+  if (deviconAvailable.has(slug)) {
+    return `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${slug}/${slug}-original.svg`;
+  }
+  return `https://cdn.simpleicons.org/${slug}/${slug}`;
+}
 
 const StyledContainer = styled(Section)`
   position: relative;
@@ -122,7 +149,7 @@ const StyledTabContent = styled.div`
   width: 100%;
   height: auto;
   padding-top: 12px;
-  padding-left: 0; // Remove left padding to eliminate the line
+  padding-left: 0;
   ${media.tablet`padding-left: 0;`};
   ${media.thone`padding-left: 0;`};
 
@@ -138,16 +165,6 @@ const StyledJobTitle = styled.h4`
   font-size: ${fontSizes.xxl};
   font-weight: 500;
   margin-bottom: 5px;
-`;
-
-
-const StyledMedia = styled.video`
-  display: block;
-  margin: 32px auto 0 auto;
-  max-width: 400px;
-  width: 100%;
-  border-radius: ${theme.borderRadius}px;
-  background-color: ${colors.lightNavy};
 `;
 
 const Skills = ({ data }) => {
@@ -206,7 +223,7 @@ const Skills = ({ data }) => {
         {data &&
           data.map(({ node }, i) => {
             const { frontmatter, html } = node;
-            const { title, gif } = frontmatter;
+            const { title } = frontmatter;
             return (
               <StyledTabContent
                 key={i}
@@ -219,17 +236,15 @@ const Skills = ({ data }) => {
                 <StyledJobTitle>
                   <span>{title}</span>
                 </StyledJobTitle>
-                {gif && gif.publicURL && (
-                  <StyledMedia
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    src={gif.publicURL}
-                    type="video/mp4"
-                    aria-label={`${title} video demonstration`}
+                <div style={{ margin: '32px auto', maxWidth: 620 }}>
+                  <IconCloud
+                    images={slugs.map(getIconUrl)}
+                    size={620}
+                    iconSize={66}
+                    radius={240}
+                    maxSpeed={0.050}
                   />
-                )}
+                </div>
                 <div dangerouslySetInnerHTML={{ __html: html }} />
               </StyledTabContent>
             );
