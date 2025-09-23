@@ -1,16 +1,16 @@
 ---
 date: '3'
 title: 'Project Q&A'
-cover: 'projectQA.jpg'
-github: 'https://github.com/Pranesh-2005/ProjectQA'
-external: 'https://projectqa.vercel.app/'
+cover: 'myv0.jpg'
+github: 'https://github.com/Pranesh-2005/V0-like-website'
+external: 'https://praneshjs-free-static-website-generator.hf.space/'
 tech:
   - Python
-  - Azure Open AI
-  - Flask
-  - Next JS
+  - Gradio
+  - DeepSeek
+  - Open Router
 
 showInProjects: true
 ---
 
-Project QA Assistant is a beginner-friendly web app that helps students and professionals prepare for technical interviews by generating project-based Q&A documentation using AI. Just enter your project details, and get likely interview questions with strong sample answers!
+V0-like-website is a lightweight web application inspired by v0.dev, designed to demonstrate AI-driven website components using DeepSeek. The project utilizes Gradio for fast prototyping and ModelScope Studio's rich UI components, making it easy to expand and customize. Ideal for developers and enthusiasts interested in modern AI-powered web experiences.
