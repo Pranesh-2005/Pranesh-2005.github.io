@@ -240,7 +240,7 @@ const Skills = ({ data }) => {
                   <IconCloud
                     images={slugs.map(getIconUrl)}
                     size={700}
-                    iconSize={62}
+                    iconSize={55}
                     radius={280}
                     maxSpeed={0.050}
                   />
