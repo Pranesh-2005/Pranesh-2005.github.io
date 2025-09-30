@@ -14,7 +14,7 @@ const slugs = [
   "graphql", "gunicorn", "html5", "huggingface", "intellij", "javascript", "jupyter", "json", "kaggle",
   "keras", "langchain", "linux", "matplotlib", "modelcontextprotocol", "mysql", "netlify", "npm", "numpy",
   "n8n", "ollama", "onnx", "openai", "opencv", "pandas", "pnpm", "postgresql", "pycharm", "pypi", "python",
-  "pythonanywhere", "pytorch", "railway", "redis", "render", "scikitlearn", "selenium", "streamlit",
+  "pythonanywhere", "pytorch", "railway", "redis", "render", "scikitlearn", "selenium", "streamlit", "supabase",
   "tensorflow", "ubuntu", "uv", "vercel", "vscode", "virtualbox", "v0", "windows11", "yaml",
 ];
 
