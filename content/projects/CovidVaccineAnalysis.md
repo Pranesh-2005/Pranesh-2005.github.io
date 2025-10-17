@@ -2,7 +2,7 @@
 date: '2025-03-03'
 title: 'NL2SQL'
 github: 'https://github.com/Pranesh-2005/Natural2Sql2Natural'
-external: ''
+external: 'https://nl2sql2nl.vercel.app'
 tech:
   - Python
   - NLP
