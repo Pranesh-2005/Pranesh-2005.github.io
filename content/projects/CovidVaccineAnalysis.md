@@ -5,9 +5,9 @@ github: 'https://github.com/Pranesh-2005/Natural2Sql2Natural'
 external: 'https://nl2sql2nl.vercel.app'
 tech:
   - Python
-  - NLP
-  - NLTK
-  - Transformers
+  - MCP
+  - OpenAI
+  - Azure
 company: ''
 showInProjects: true
 ---
