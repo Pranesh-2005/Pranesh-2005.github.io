@@ -3,8 +3,8 @@ module.exports = {
   siteDescription:
     'Pranesh is an incoming Software Developer, based in India, who loves learning new things and helping tech beginners.',
   siteKeywords:
-    'Pranesh, pranesh, pranesh-2005, praneshs, software engineer, web developer, javascript, python, java, bit, erode',
-  siteUrl: 'https://Pranesh-2005.github.io/',
+    'Pranesh, pranesh, pranesh-2005, praneshs, AI engineer, web developer,  python, java, bit, erode, Pranesh BIT, Pranesh AIML, Pranesh Portfolio, Pranesh Punjai Puliampatti, Pranesh India, Pranesh GitHub, Pranesh LinkedIn, Pranesh Gudalur, Pranesh Resume',
+  siteUrl: 'https://praneshjs.vercel.app/',
   siteLanguage: 'en_US',
   googleAnalyticsID: 'UA-45666519-2',
   googleVerification: 'DCl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk',
