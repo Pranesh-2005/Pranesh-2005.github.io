@@ -7,7 +7,7 @@ module.exports = {
   siteUrl: 'https://praneshjs.vercel.app',
   siteLanguage: 'en_US',
   googleAnalyticsID: 'UA-45666519-2',
-  googleVerification: 'DCl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk',
+  googleVerification: '9c9WJrB6k1_0JHlUx3V8JNS7B5t4OGt8asr9IeJZhkM',
   name: 'Pranesh',
   location: 'Punjai Puliampatti, India',
   email: 'praneshmadhan646@gmail.com',
