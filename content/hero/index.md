@@ -1,4 +1,5 @@
 ---
+praise: 'எல்லா புகழும் இறைவனுக்கே ✝ 🕉 ☪'
 title: "Hello I'm"
 name: 'Pranesh'
 subtitle: 'I love exploring new things!'

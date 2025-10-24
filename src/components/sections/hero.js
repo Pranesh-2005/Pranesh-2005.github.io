@@ -25,6 +25,15 @@ const StyledOverline = styled.h1`
   ${media.desktop`font-size: ${fontSizes.sm};`};
   ${media.tablet`font-size: ${fontSizes.smish};`};
 `;
+const StyledPraise = styled.h1`
+  font-size: 30px;
+  line-height: 1.5;
+  margin: 0 2 20px 10px;
+  ${media.desktop`font-size: 20px;`};
+  ${media.tablet`font-size: 10px;`};
+  ${media.phablet`font-size: 30px;`};
+  ${media.phone`font-size: 20px;`};
+`;
 const StyledTitle = styled.h2`
   font-size: 80px;
   line-height: 1.1;
@@ -65,7 +74,9 @@ const Hero = ({ data }) => {
   }, []);
 
   const { frontmatter, html } = data[0].node;
-
+  const zero = () => (
+    <StyledPraise style={{ transitionDelay: '50ms'}}>{frontmatter.praise}</StyledPraise>
+  );
   const one = () => (
     <StyledOverline style={{ transitionDelay: '100ms' }}>{frontmatter.title}</StyledOverline>
   );
@@ -87,7 +98,7 @@ const Hero = ({ data }) => {
     </div>
   );
 
-  const items = [one, two, three, four, five];
+  const items = [zero, one, two, three, four, five];
 
   return (
     <StyledContainer>
