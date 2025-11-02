@@ -19,13 +19,13 @@ module.exports = {
       url: 'https://github.com/Pranesh-2005',
     },
     {
+      name: 'Hugging Face',
+      url: 'https://huggingface.co/praneshJS',
+    },
+    {
       name: 'Linkedin',
       url: 'https://www.linkedin.com/in/pranesh5264/',
     },
-    // {
-    //   name: 'Codepen',
-    //   url: 'https://codepen.io/yashitanamdeo',
-    // },
     {
       name: 'Instagram',
       url: 'https://www.instagram.com/pranesh_____17',
