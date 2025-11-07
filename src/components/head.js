@@ -19,14 +19,16 @@ import favicon96x96 from '@images/favicons/favicon-96x96.png';
 import favicon16x16 from '@images/favicons/favicon-16x16.png';
 import msIcon144x144 from '@images/favicons/ms-icon-144x144.png';
 
-const Head = ({ metadata }) => (
+const Head = ({ metadata, pathname = '' }) => {
+  const canonical = `${metadata.siteUrl}${(pathname || '/').split('#')[0]}`;
+  return (
   <Helmet>
     <html lang="en" prefix="og: http://ogp.me/ns#" />
     <title itemProp="name" lang="en">
       {metadata.title}
     </title>
     <link rel="shortcut icon" href={favicon} />
-    <link rel="canonical" href="http://praneshjs.vercel.app/" />
+    <link rel="canonical" href={canonical} />
 
     <meta name="description" content={metadata.description} />
     <meta name="keywords" content={config.siteKeywords} />
@@ -71,7 +73,7 @@ const Head = ({ metadata }) => (
     <meta name="theme-color" content={config.colors.navy} />
   </Helmet>
 );
-
+};
 export default Head;
 
 Head.propTypes = {

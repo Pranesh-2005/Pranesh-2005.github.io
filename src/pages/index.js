@@ -4,24 +4,35 @@ import PropTypes from 'prop-types';
 import { Layout, Hero, About, Skills, Featured, Projects, Contact, Certificates } from '@components';
 import styled from 'styled-components';
 import { Main } from '@styles';
+import Head from '../components/head';
+import config from '../config';
 
 const StyledMainContainer = styled(Main)`
   counter-reset: section;
 `;
 
-const IndexPage = ({ location, data }) => (
-  <Layout location={location}>
-    <StyledMainContainer className="fillHeight">
-      <Hero data={data.hero.edges} />
-      <About data={data.about.edges} />
-      <Skills data={data.skills.edges} />
-      <Featured data={data.featured.edges} />
-      <Projects data={data.projects.edges} />
-      <Certificates data={data.certificates.edges} />
-      <Contact data={data.contact.edges} />
-    </StyledMainContainer>
-  </Layout>
-);
+const IndexPage = ({ location, data }) => {
+  const metadata = {
+    title: config.siteTitle,
+    description: config.siteDescription,
+    siteUrl: config.siteUrl,
+  };
+  
+  return (
+    <Layout location={location}>
+      <Head metadata={metadata} pathname={location.pathname} />
+      <StyledMainContainer className="fillHeight">
+        <Hero data={data.hero.edges} />
+        <About data={data.about.edges} />
+        <Skills data={data.skills.edges} />
+        <Featured data={data.featured.edges} />
+        <Projects data={data.projects.edges} />
+        <Certificates data={data.certificates.edges} />
+        <Contact data={data.contact.edges} />
+      </StyledMainContainer>
+    </Layout>
+  );
+};
 
 IndexPage.propTypes = {
   location: PropTypes.object.isRequired,
@@ -64,21 +75,22 @@ export const pageQuery = graphql`
         }
       }
     }
-  skills: allMarkdownRemark(
-    filter: { fileAbsolutePath: { regex: "/jobs/" } }
-    sort: { fields: [frontmatter___date], order: DESC }
-  ) {
-    edges {
-      node {
-        frontmatter {
-          gif {
-            publicURL
+    skills: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/jobs/" } }
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            title
+            gif {
+              publicURL
+            }
           }
+          html
         }
-        html
       }
     }
-  }
     featured: allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/featured/" } }
       sort: { fields: [frontmatter___date], order: DESC }
