@@ -19,8 +19,8 @@ const slugs = [
 ];
 
 const deviconAvailable = new Set([
-  "anaconda", "apachehadoop", "azure", "bash", "c", "clion", "css3", "docker", "eclipse", "fastapi", "flask",
-  "git", "github", "gitlab", "go", "graphql", "html5", "intellij", "javascript", "jupyter", "kaggle", "keras",
+  "anaconda", "azure", "bash", "c", "clion", "css3", "docker", "eclipse", "fastapi", "flask",
+  "git", "github", "gitlab", "go", "html5", "intellij", "javascript", "jupyter", "kaggle", "keras",
   "linux", "matplotlib", "mysql", "netlify", "npm", "numpy", "opencv", "pandas", "postgresql", "pycharm",
   "python", "pytorch", "redis", "scikitlearn", "selenium", "tensorflow", "ubuntu", "vercel", "vscode",
   "windows11", "yaml",
