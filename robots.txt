@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://praneshjs.vercel.app/sitemap-index.xml
-Host: https://praneshjs.vercel.app
+Sitemap: https://pranesh-2005.github.io/sitemap.xml
+Host: https://pranesh-2005.github.io
