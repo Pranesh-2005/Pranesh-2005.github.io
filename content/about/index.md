@@ -15,5 +15,5 @@ Hello! I'm Pranesh, from Punjai Puliampatti.
 
 I am a creative, time punctual, dedicated, goal-oriented individual with decent moral Values and Ethicates along with a high-energy level, good communication skills, strong organizational skills, and meticulous attention to detail.
 
-I am currently pursuing my Bachelors at [Bannari Amman Institute of Technolgy, Sathyamangalam](https://www.bitsathy.ac.in/) in Artificial Intelligence and Machine Learning (2022-Present) my current CGPA is [7.81]() out of 10 upto 6'th Semester.
+I am currently pursuing my Bachelors at [Bannari Amman Institute of Technolgy, Sathyamangalam](https://www.bitsathy.ac.in/) in Artificial Intelligence and Machine Learning (2022-Present) my current CGPA is [7.9]() out of 10 upto 7'th Semester.
 
