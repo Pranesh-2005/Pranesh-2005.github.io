@@ -1,6 +1,6 @@
 ---
 title: 'About Me'
-avatar: 'me.jpg'
+avatar: 'me.png'
 skills:
   - Coding
   - Reading Posts and Blogs of Tech
