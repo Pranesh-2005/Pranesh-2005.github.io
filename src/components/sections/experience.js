@@ -4,39 +4,11 @@ import sr from '@utils/sr';
 import { srConfig } from '@config';
 import styled from 'styled-components';
 import { theme, mixins, media, Section, Heading } from '@styles';
-import { IconCloud } from '../magiui/icon-cloud';
-
 const { colors, fontSizes, fonts } = theme;
 
-const slugs = [
-  "anaconda", "apachehadoop", "azure", "gnubash", "c", "claude", "clion", "cockroachlabs", "css", "docker",
-  "eclipseide", "fastapi", "flask", "git", "github", "gitlab", "gitlfs", "go", "googlecolab", "gradio",
-  "graphql", "gunicorn", "html5", "huggingface", "intellij", "javascript", "jupyter", "json", "kaggle",
-  "keras", "langchain", "linux", "matplotlib", "modelcontextprotocol", "mysql", "netlify", "npm", "numpy",
-  "n8n", "ollama", "onnx", "openai", "opencv", "pandas", "pnpm", "postgresql", "pycharm", "pypi", "python",
-  "pythonanywhere", "pytorch", "railway", "redis", "render", "scikitlearn", "selenium", "streamlit", "supabase",
-  "tensorflow", "ubuntu", "uv", "vercel", "vscode", "virtualbox", "v0", "windows11", "yaml",
-];
-
-const deviconAvailable = new Set([
-  "anaconda", "azure", "bash", "c", "clion", "css3", "docker", "eclipse", "fastapi", "flask",
-  "git", "github", "gitlab", "go", "html5", "intellij", "javascript", "jupyter", "kaggle", "keras",
-  "linux", "matplotlib", "mysql", "netlify", "npm", "numpy", "opencv", "pandas", "postgresql", "pycharm",
-  "python", "pytorch", "redis", "scikitlearn", "selenium", "tensorflow", "ubuntu", "vercel", "vscode",
-  "windows11", "yaml",
-]);
-
-function getIconUrl(slug) {
-  if (deviconAvailable.has(slug)) {
-    return `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${slug}/${slug}-original.svg`;
-  }
-  return `https://cdn.simpleicons.org/${slug}/${slug}`;
-}
-
 const StyledContainer = styled(Section)`
-  ${mixins.flexCenter};
-  flex-direction: column;
-  align-items: flex-start;
+  position: relative;
+  max-width: 700px;
 `;
 const StyledTabs = styled.div`
   display: flex;
@@ -150,8 +122,8 @@ const StyledTabContent = styled.div`
   width: 100%;
   height: auto;
   padding-top: 12px;
-  padding-left: 0;
-  ${media.tablet`padding-left: 0;`};
+  padding-left: 30px;
+  ${media.tablet`padding-left: 20px;`};
   ${media.thone`padding-left: 0;`};
 
   ul {
@@ -167,8 +139,22 @@ const StyledJobTitle = styled.h4`
   font-weight: 500;
   margin-bottom: 5px;
 `;
+const StyledCompany = styled.span`
+  color: ${colors.green};
+`;
+const StyledJobDetails = styled.h5`
+  font-family: ${fonts.SFMono};
+  font-size: ${fontSizes.smish};
+  font-weight: normal;
+  letter-spacing: 0.05em;
+  color: ${colors.lightSlate};
+  margin-bottom: 30px;
+  svg {
+    width: 15px;
+  }
+`;
 
-const Skills = ({ data }) => {
+const Experience = ({ data }) => {
   const [activeTabId, setActiveTabId] = useState(0);
   const [tabFocus, setTabFocus] = useState(null);
   const tabs = useRef([]);
@@ -180,28 +166,41 @@ const Skills = ({ data }) => {
     if (tabs.current[tabFocus]) {
       tabs.current[tabFocus].focus();
     } else {
-      if (tabFocus >= tabs.current.length) setTabFocus(0);
-      if (tabFocus < 0) setTabFocus(tabs.current.length - 1);
+      // If we're at the end, go to the start
+      if (tabFocus >= tabs.current.length) {
+        setTabFocus(0);
+      }
+      // If we're at the start, move to the end
+      if (tabFocus < 0) {
+        setTabFocus(tabs.current.length - 1);
+      }
     }
   };
 
+  // Only re-run the effect if tabFocus changes
   useEffect(() => focusTab(), [tabFocus]);
 
   const onKeyPressed = e => {
     if (e.keyCode === 38 || e.keyCode === 40) {
       e.preventDefault();
-      setTabFocus(tabFocus + (e.keyCode === 40 ? 1 : -1));
+      if (e.keyCode === 40) {
+        // Move down
+        setTabFocus(tabFocus + 1);
+      } else if (e.keyCode === 38) {
+        // Move up
+        setTabFocus(tabFocus - 1);
+      }
     }
   };
 
   return (
-    <StyledContainer id="skills" ref={revealContainer}>
-      <Heading>Languages and Tools I&apos;m Good At</Heading>
+    <StyledContainer id="experience" ref={revealContainer}>
+      <Heading>Where I&apos;ve Worked</Heading>
       <StyledTabs>
-        <StyledTabList role="tablist" aria-label="Skill tabs" onKeyDown={onKeyPressed}>
+        <StyledTabList role="tablist" aria-label="Job tabs" onKeyDown={e => onKeyPressed(e)}>
           {data &&
             data.map(({ node }, i) => {
-              const { title } = node.frontmatter;
+              const { company } = node.frontmatter;
               return (
                 <li key={i}>
                   <StyledTabButton
@@ -210,10 +209,10 @@ const Skills = ({ data }) => {
                     ref={el => (tabs.current[i] = el)}
                     id={`tab-${i}`}
                     role="tab"
-                    aria-selected={activeTabId === i}
+                    aria-selected={activeTabId === i ? true : false}
                     aria-controls={`panel-${i}`}
                     tabIndex={activeTabId === i ? '0' : '-1'}>
-                    {/* <span>{title}</span> */}
+                    <span>{company}</span>
                   </StyledTabButton>
                 </li>
               );
@@ -224,7 +223,7 @@ const Skills = ({ data }) => {
         {data &&
           data.map(({ node }, i) => {
             const { frontmatter, html } = node;
-            const { title } = frontmatter;
+            const { title, url, company, range } = frontmatter;
             return (
               <StyledTabContent
                 key={i}
@@ -235,17 +234,17 @@ const Skills = ({ data }) => {
                 tabIndex={activeTabId === i ? '0' : '-1'}
                 hidden={activeTabId !== i}>
                 <StyledJobTitle>
-                  {/* <span>{title}</span> */}
+                  <span>{title}</span>
+                  <StyledCompany>
+                    <span>&nbsp;@&nbsp;</span>
+                    <a href={url} target="_blank" rel="nofollow noopener noreferrer">
+                      {company}
+                    </a>
+                  </StyledCompany>
                 </StyledJobTitle>
-                <div style={{ margin: '32px auto', maxWidth: 620 }}>
-                  <IconCloud
-                    images={slugs.map(getIconUrl)}
-                    size={700}
-                    iconSize={55}
-                    radius={280}
-                    maxSpeed={0.050}
-                  />
-                </div>
+                <StyledJobDetails>
+                  <span>{range}</span>
+                </StyledJobDetails>
                 <div dangerouslySetInnerHTML={{ __html: html }} />
               </StyledTabContent>
             );
@@ -255,8 +254,8 @@ const Skills = ({ data }) => {
   );
 };
 
-Skills.propTypes = {
+Experience.propTypes = {
   data: PropTypes.array.isRequired,
 };
 
-export default Skills;
+export default Experience;
