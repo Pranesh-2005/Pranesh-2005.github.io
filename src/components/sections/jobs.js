@@ -34,9 +34,8 @@ function getIconUrl(slug) {
 }
 
 const StyledContainer = styled(Section)`
-  ${mixins.flexCenter};
-  flex-direction: column;
-  align-items: flex-start;
+  position: relative;
+  max-width: 700px;
 `;
 const StyledTabs = styled.div`
   display: flex;
