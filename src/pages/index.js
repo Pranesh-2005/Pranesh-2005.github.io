@@ -87,7 +87,6 @@ export const pageQuery = graphql`
             company
             location
             range
-            url
           }
           html
         }
