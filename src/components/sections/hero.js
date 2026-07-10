@@ -30,7 +30,7 @@ const StyledPraise = styled.h1`
   line-height: 1.5;
   margin: 0 2 20px 10px;
   ${media.desktop`font-size: 20px;`};
-  ${media.tablet`font-size: 10px;`};
+  ${media.tablet`font-size: 25px;`};
   ${media.phablet`font-size: 30px;`};
   ${media.phone`font-size: 20px;`};
 `;

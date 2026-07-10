@@ -4,6 +4,7 @@ import sr from '@utils/sr';
 import { srConfig } from '@config';
 import styled from 'styled-components';
 import { theme, mixins, media, Section, Heading } from '@styles';
+import { throttle } from '@utils';
 import { IconCloud } from '../magiui/icon-cloud';
 
 const { colors, fontSizes, fonts } = theme;
@@ -36,6 +37,8 @@ function getIconUrl(slug) {
 const StyledContainer = styled(Section)`
   position: relative;
   max-width: 700px;
+  ${media.tablet`max-width: 100%;`};
+  ${media.thone`padding: 0 20px;`};
 `;
 const StyledTabs = styled.div`
   display: flex;
@@ -166,11 +169,46 @@ const StyledJobTitle = styled.h4`
   font-weight: 500;
   margin-bottom: 5px;
 `;
+const StyledIconCloudWrap = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 720px;
+  margin: 32px auto;
+  background: ${colors.lightNavy};
+  border-radius: ${theme.borderRadius};
+`;
+
+const cloudSizePresets = {
+  giant: [700, 55, 280],
+  tablet: [500, 45, 200],
+  thone: [340, 35, 140],
+  phone: [260, 28, 110],
+};
+
+function getCloudSize() {
+  const w = typeof window !== 'undefined' ? window.innerWidth : 1440;
+  if (w <= 376) return cloudSizePresets.phone;
+  if (w <= 600) return cloudSizePresets.thone;
+  if (w <= 768) return cloudSizePresets.tablet;
+  return cloudSizePresets.giant;
+}
+
+function useCloudSize() {
+  const [cloudSize, setCloudSize] = useState(getCloudSize);
+  useEffect(() => {
+    const onResize = throttle(() => setCloudSize(getCloudSize()), 200);
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+  return cloudSize;
+}
 
 const Skills = ({ data }) => {
   const [activeTabId, setActiveTabId] = useState(0);
   const [tabFocus, setTabFocus] = useState(null);
   const tabs = useRef([]);
+  const [cloudSize, cloudIconSize, cloudRadius] = useCloudSize();
 
   const revealContainer = useRef(null);
   useEffect(() => sr.reveal(revealContainer.current, srConfig()), []);
@@ -236,21 +274,15 @@ const Skills = ({ data }) => {
                 <StyledJobTitle>
                   {/* <span>{title}</span> */}
                 </StyledJobTitle>
-                <div
-                  style={{
-                    margin: '32px auto',
-                    maxWidth: 720,
-                    background: colors.lightNavy,
-                    borderRadius: theme.borderRadius,
-                  }}>
+                <StyledIconCloudWrap>
                   <IconCloud
                     images={slugs.map(getIconUrl)}
-                    size={700}
-                    iconSize={55}
-                    radius={280}
+                    size={cloudSize}
+                    iconSize={cloudIconSize}
+                    radius={cloudRadius}
                     maxSpeed={0.050}
                   />
-                </div>
+                </StyledIconCloudWrap>
                 <div dangerouslySetInnerHTML={{ __html: html }} />
               </StyledTabContent>
             );

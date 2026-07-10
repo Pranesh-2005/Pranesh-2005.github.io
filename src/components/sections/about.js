@@ -30,6 +30,7 @@ const SkillsContainer = styled.ul`
   padding: 0;
   margin: 20px 0 0 0;
   list-style: none;
+  ${media.phablet`grid-template-columns: 1fr;`};
 `;
 const Skill = styled.li`
   position: relative;

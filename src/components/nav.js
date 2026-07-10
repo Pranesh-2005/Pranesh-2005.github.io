@@ -31,6 +31,8 @@ const StyledContainer = styled.header`
   );
   ${media.desktop`padding: 0 40px;`};
   ${media.tablet`padding: 0 25px;`};
+  ${media.thone`padding: 0 20px;`};
+  ${media.phone`padding: 0 15px;`};
 `;
 const StyledNav = styled.nav`
   ${mixins.flexBetween};

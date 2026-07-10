@@ -158,13 +158,13 @@ const StyledButtonGroup = styled.div`
   justify-content: center; /* Center horizontally */
   flex-wrap: wrap;
 
-  @media (max-width: 500px) {
+  ${media.phablet`
     flex-direction: column;
     align-items: center;
     button {
       width: 100%;
     }
-  }
+  `};
 `;
 // --- Component Definition ---
 const Projects = ({ data }) => {
