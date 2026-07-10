@@ -1,16 +1,15 @@
 ---
 date: '3'
-title: 'v0.dev clone'
-cover: 'myv0.jpg'
-github: 'https://github.com/Pranesh-2005/V0-like-website'
-external: 'https://praneshjs-free-static-website-generator.hf.space/'
+title: 'Guardix'
+cover: 'guard.jpg'
+github: 'https://github.com/Pranesh-2005/guardix'
+external: 'https://pypi.org/project/guardix/'
 tech:
   - Python
-  - Gradio
-  - DeepSeek
-  - Open Router
+  - BERT
+  - PyTorch
 
 showInProjects: true
 ---
 
-V0-like-website is a lightweight web application inspired by v0.dev, designed to demonstrate AI-driven website components using DeepSeek. The project utilizes Gradio for fast prototyping and ModelScope Studio's rich UI components, making it easy to expand and customize. Ideal for developers and enthusiasts interested in modern AI-powered web experiences.
+Guardix is an input prompt-guard library built on a BERT model fine-tuned on a prompt-injection dataset, detecting malicious or manipulative prompts before they reach an LLM. Published as a pip-installable package (`guardix`).

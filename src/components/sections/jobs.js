@@ -236,7 +236,13 @@ const Skills = ({ data }) => {
                 <StyledJobTitle>
                   {/* <span>{title}</span> */}
                 </StyledJobTitle>
-                <div style={{ margin: '32px auto', maxWidth: 620 }}>
+                <div
+                  style={{
+                    margin: '32px auto',
+                    maxWidth: 720,
+                    background: colors.lightNavy,
+                    borderRadius: theme.borderRadius,
+                  }}>
                   <IconCloud
                     images={slugs.map(getIconUrl)}
                     size={700}

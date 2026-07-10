@@ -1,15 +1,16 @@
 ---
 date: '2'
-title: 'PDF RAG'
-cover: './rag.jpg'
-github: 'https://github.com/Pranesh-2005/PDF_RAG'
-external: 'https://anypdfrag.vercel.app'
+title: 'NL2SQL2NL'
+cover: 'nl2sql2nl-new.jpg'
+github: 'https://github.com/Pranesh-2005/S7-Mini-Project'
+external: 'https://nl2sql2nl.vercel.app'
 tech:
-  - Python(Flask)
-  - Azure Open AI
+  - Python
+  - MCP
+  - SQL Server
   - Next.Js
   - TypeScript
 showInProjects: true
 ---
 
-Built a Pdf RAG where you can get insights from your uploaded pdf and asking questions to clear your doubts coz it's powered by gpt 4.1 and you and ur friend can ask different questions from a single file uploaded because it is designed for collaboration
+NL2SQL2NL is a Natural Language to SQL system built as an MCP (Model Context Protocol) server, letting you query a SQL Server database in plain English and get back plain-English answers. Backend exposes SQL Server operations as MCP tools; frontend built with Next.js and TypeScript.
