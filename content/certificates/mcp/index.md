@@ -7,4 +7,4 @@ external: 'https://drive.google.com/file/d/1J6V_KNl5Ck6_r4kgDhMyp1Mkrlxq0nix/vie
 web: 'https://verify.skilljar.com/c/22s3ivh2i2ym1'
 ---
 
-Earned the Introduction to Model Context Protocol by Anthrophic, demonstrating foundational knowledge of Model Context Protocol (MCP).
+Earned the Introduction to Model Context Protocol by Anthropic, demonstrating foundational knowledge of Model Context Protocol (MCP).

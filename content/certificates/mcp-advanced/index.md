@@ -7,4 +7,4 @@ external: 'https://drive.google.com/file/d/1-G3PnFT6mHH8If47bDStXllMmiwYMoKd/vie
 web: 'https://verify.skilljar.com/c/hbzpr8fvfjd2'
 ---
 
-Earned the Model Context Protocol - Advanced Topics by Anthrophic, demonstrating Advanced Topics of Model Context Protocol (MCP).
+Earned the Model Context Protocol - Advanced Topics by Anthropic, demonstrating Advanced Topics of Model Context Protocol (MCP).
