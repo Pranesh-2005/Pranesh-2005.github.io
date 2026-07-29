@@ -1,5 +1,5 @@
 ---
-date: '4'
+date: '7'
 title: 'Data Analysis with Python(FCC)'
 cover: 'freecodecamp-dataanalysit-certificate.jpg'
 github: 'https://github.com/Pranesh-2005/AI-Generated-Video-Detector'

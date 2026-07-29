@@ -1,5 +1,5 @@
 ---
-date: '4'
+date: '9'
 title: 'Oracle Data Platform 2025 Certified Foundations Associate'
 cover: 'ocidp-1.png'
 github: 'https://github.com/Pranesh-2005/AI-Generated-Video-Detector'

@@ -1,5 +1,5 @@
 ---
-date: '4'
+date: '8'
 title: 'OCI 2025 Certified AI Foundations Associate'
 cover: 'ociai-1.png'
 github: 'https://github.com/Pranesh-2005/AI-Generated-Video-Detector'

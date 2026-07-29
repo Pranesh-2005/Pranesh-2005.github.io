@@ -1,5 +1,5 @@
 ---
-date: '4'
+date: '3'
 title: 'Model Context Protocol - Advanced Topics'
 cover: 'mcp-advanced.jpg'
 github: 'https://github.com/Pranesh-2005/AI-Generated-Video-Detector'

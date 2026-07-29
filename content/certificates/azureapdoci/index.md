@@ -1,5 +1,5 @@
 ---
-date: '4'
+date: '5'
 title: 'Microsoft Applied Skills: Create an IDP solution with Azure AI Document Intelligence'
 cover: 'microsoftdocumentprocessing.jpg'
 github: 'https://github.com/Pranesh-2005/AI-Generated-Video-Detector'
