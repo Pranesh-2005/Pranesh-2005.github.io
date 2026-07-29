@@ -1,5 +1,5 @@
 ---
-date: '1'
+date: '01'
 title: 'Microsoft Certified: Azure AI Fundamentals'
 cover: 'ai901.jpg'
 github: 'https://github.com/Pranesh-2005/AI-Generated-Video-Detector'

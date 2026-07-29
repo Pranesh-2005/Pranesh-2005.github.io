@@ -7,6 +7,18 @@
 const path = require('path');
 const _ = require('lodash');
 
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+  // frontmatter.date is used both as an ISO date string (posts/projects/experience)
+  // and an ordinal string (certificates/featured); pin the inferred type to String
+  // so Gatsby doesn't drop the field site-wide when it sees mixed shapes.
+  createTypes(`
+    type MarkdownRemarkFrontmatter {
+      date: String
+    }
+  `);
+};
+
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
   const postTemplate = path.resolve(`src/templates/post.js`);

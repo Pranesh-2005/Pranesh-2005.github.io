@@ -1,5 +1,5 @@
 ---
-date: '4'
+date: '04'
 title: 'Microsoft Applied Skills: Build a NLP solution with Azure AI Language'
 cover: 'microsoftnlp.jpg'
 github: 'https://github.com/Pranesh-2005/AI-Generated-Video-Detector'

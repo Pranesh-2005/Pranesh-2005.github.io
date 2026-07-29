@@ -27,11 +27,22 @@ const deviconAvailable = new Set([
   "windows11", "yaml",
 ]);
 
+// Simple Icons' CDN (cdn.simpleicons.org) doesn't serve this brand's mark; the
+// npm package still does, but as an unfilled black path invisible on the dark
+// canvas background, so it's inlined here with an explicit fill.
+const inlineIcons = {
+  openai:
+    'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iI2U2ZjFmZiI+PHBhdGggZD0iTTIyLjI4MTkgOS44MjExYTUuOTg0NyA1Ljk4NDcgMCAwIDAtLjUxNTctNC45MTA4IDYuMDQ2MiA2LjA0NjIgMCAwIDAtNi41MDk4LTIuOUE2LjA2NTEgNi4wNjUxIDAgMCAwIDQuOTgwNyA0LjE4MThhNS45ODQ3IDUuOTg0NyAwIDAgMC0zLjk5NzcgMi45IDYuMDQ2MiA2LjA0NjIgMCAwIDAgLjc0MjcgNy4wOTY2IDUuOTggNS45OCAwIDAgMCAuNTExIDQuOTEwNyA2LjA1MSA2LjA1MSAwIDAgMCA2LjUxNDYgMi45MDAxQTUuOTg0NyA1Ljk4NDcgMCAwIDAgMTMuMjU5OSAyNGE2LjA1NTcgNi4wNTU3IDAgMCAwIDUuNzcxOC00LjIwNTggNS45ODk0IDUuOTg5NCAwIDAgMCAzLjk5NzctMi45MDAxIDYuMDU1NyA2LjA1NTcgMCAwIDAtLjc0NzUtNy4wNzI5em0tOS4wMjIgMTIuNjA4MWE0LjQ3NTUgNC40NzU1IDAgMCAxLTIuODc2NC0xLjA0MDhsLjE0MTktLjA4MDQgNC43NzgzLTIuNzU4MmEuNzk0OC43OTQ4IDAgMCAwIC4zOTI3LS42ODEzdi02LjczNjlsMi4wMiAxLjE2ODZhLjA3MS4wNzEgMCAwIDEgLjAzOC4wNTJ2NS41ODI2YTQuNTA0IDQuNTA0IDAgMCAxLTQuNDk0NSA0LjQ5NDR6bS05LjY2MDctNC4xMjU0YTQuNDcwOCA0LjQ3MDggMCAwIDEtLjUzNDYtMy4wMTM3bC4xNDIuMDg1MiA0Ljc4MyAyLjc1ODJhLjc3MTIuNzcxMiAwIDAgMCAuNzgwNiAwbDUuODQyOC0zLjM2ODV2Mi4zMzI0YS4wODA0LjA4MDQgMCAwIDEtLjAzMzIuMDYxNUw5Ljc0IDE5Ljk1MDJhNC40OTkyIDQuNDk5MiAwIDAgMS02LjE0MDgtMS42NDY0ek0yLjM0MDggNy44OTU2YTQuNDg1IDQuNDg1IDAgMCAxIDIuMzY1NS0xLjk3MjhWMTEuNmEuNzY2NC43NjY0IDAgMCAwIC4zODc5LjY3NjVsNS44MTQ0IDMuMzU0My0yLjAyMDEgMS4xNjg1YS4wNzU3LjA3NTcgMCAwIDEtLjA3MSAwbC00LjgzMDMtMi43ODY1QTQuNTA0IDQuNTA0IDAgMCAxIDIuMzQwOCA3Ljg3MnptMTYuNTk2MyAzLjg1NThMMTMuMTAzOCA4LjM2NCAxNS4xMTkyIDcuMmEuMDc1Ny4wNzU3IDAgMCAxIC4wNzEgMGw0LjgzMDMgMi43OTEzYTQuNDk0NCA0LjQ5NDQgMCAwIDEtLjY3NjUgOC4xMDQydi01LjY3NzJhLjc5Ljc5IDAgMCAwLS40MDctLjY2N3ptMi4wMTA3LTMuMDIzMWwtLjE0Mi0uMDg1Mi00Ljc3MzUtMi43ODE4YS43NzU5Ljc3NTkgMCAwIDAtLjc4NTQgMEw5LjQwOSA5LjIyOTdWNi44OTc0YS4wNjYyLjA2NjIgMCAwIDEgLjAyODQtLjA2MTVsNC44MzAzLTIuNzg2NmE0LjQ5OTIgNC40OTkyIDAgMCAxIDYuNjgwMiA0LjY2ek04LjMwNjUgMTIuODYzbC0yLjAyLTEuMTYzOGEuMDgwNC4wODA0IDAgMCAxLS4wMzgtLjA1NjdWNi4wNzQyYTQuNDk5MiA0LjQ5OTIgMCAwIDEgNy4zNzU3LTMuNDUzN2wtLjE0Mi4wODA1TDguNzA0IDUuNDU5YS43OTQ4Ljc5NDggMCAwIDAtLjM5MjcuNjgxM3ptMS4wOTc2LTIuMzY1NGwyLjYwMi0xLjQ5OTggMi42MDY5IDEuNDk5OHYyLjk5OTRsLTIuNTk3NCAxLjQ5OTctMi42MDY3LTEuNDk5N1oiLz48L3N2Zz4=',
+};
+
 function getIconUrl(slug) {
+  if (inlineIcons[slug]) {
+    return inlineIcons[slug];
+  }
   if (deviconAvailable.has(slug)) {
     return `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${slug}/${slug}-original.svg`;
   }
-  return `https://cdn.simpleicons.org/${slug}/${slug}`;
+  return `https://cdn.simpleicons.org/${slug}`;
 }
 
 const StyledContainer = styled(Section)`
@@ -179,28 +190,41 @@ const StyledIconCloudWrap = styled.div`
   border-radius: ${theme.borderRadius};
 `;
 
-const cloudSizePresets = {
-  giant: [700, 55, 280],
-  tablet: [500, 45, 200],
-  thone: [340, 35, 140],
-  phone: [260, 28, 110],
-};
+const MAX_CLOUD_SIZE = 700;
+const MIN_CLOUD_SIZE = 180;
 
-function getCloudSize() {
-  const w = typeof window !== 'undefined' ? window.innerWidth : 1440;
-  if (w <= 376) return cloudSizePresets.phone;
-  if (w <= 600) return cloudSizePresets.thone;
-  if (w <= 768) return cloudSizePresets.tablet;
-  return cloudSizePresets.giant;
+function sizeToPreset(size) {
+  const iconSize = Math.round(size * (55 / MAX_CLOUD_SIZE));
+  const radius = Math.round(size * (280 / MAX_CLOUD_SIZE));
+  return [size, iconSize, radius];
 }
 
-function useCloudSize() {
-  const [cloudSize, setCloudSize] = useState(getCloudSize);
+function useCloudSize(wrapRef) {
+  const [cloudSize, setCloudSize] = useState(() => sizeToPreset(MAX_CLOUD_SIZE));
+
   useEffect(() => {
-    const onResize = throttle(() => setCloudSize(getCloudSize()), 200);
-    window.addEventListener('resize', onResize);
-    return () => window.removeEventListener('resize', onResize);
-  }, []);
+    const el = wrapRef.current;
+    if (!el) return undefined;
+
+    const measure = () => {
+      const available = Math.floor(el.getBoundingClientRect().width);
+      const size = Math.max(MIN_CLOUD_SIZE, Math.min(MAX_CLOUD_SIZE, available));
+      setCloudSize(sizeToPreset(size));
+    };
+
+    measure();
+
+    if (typeof ResizeObserver === 'undefined') {
+      const onResize = throttle(measure, 200);
+      window.addEventListener('resize', onResize);
+      return () => window.removeEventListener('resize', onResize);
+    }
+
+    const ro = new ResizeObserver(throttle(measure, 100));
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [wrapRef]);
+
   return cloudSize;
 }
 
@@ -208,7 +232,8 @@ const Skills = ({ data }) => {
   const [activeTabId, setActiveTabId] = useState(0);
   const [tabFocus, setTabFocus] = useState(null);
   const tabs = useRef([]);
-  const [cloudSize, cloudIconSize, cloudRadius] = useCloudSize();
+  const cloudWrapRef = useRef(null);
+  const [cloudSize, cloudIconSize, cloudRadius] = useCloudSize(cloudWrapRef);
 
   const revealContainer = useRef(null);
   useEffect(() => sr.reveal(revealContainer.current, srConfig()), []);
@@ -274,7 +299,7 @@ const Skills = ({ data }) => {
                 <StyledJobTitle>
                   {/* <span>{title}</span> */}
                 </StyledJobTitle>
-                <StyledIconCloudWrap>
+                <StyledIconCloudWrap ref={cloudWrapRef}>
                   <IconCloud
                     images={slugs.map(getIconUrl)}
                     size={cloudSize}

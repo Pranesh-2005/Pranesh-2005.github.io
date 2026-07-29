@@ -1,5 +1,5 @@
 ---
-date: '6'
+date: '06'
 title: 'Machine Learning with Python(FreeCodeCamp)'
 cover: 'freecodecamp-ml-certificate.jpg'
 github: 'https://github.com/Pranesh-2005/AI-Generated-Video-Detector'
